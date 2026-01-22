@@ -25,23 +25,28 @@ $computer: 900px;
 }
 
 html, body {
-  height:100%;
   margin: 0;
+  min-height:100vh;  
 }
 
 body {
   display: flex;
   flex-direction: column;
-  background-image: url("./images/Namnlös\ design.png");
-
   font-family:'Gabriola';
   font-size: 2rem;
+  overflow-x: hidden;
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 15px 15px 0 0;
+}
+
+.img1HomeHeader {
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
 }
 
 .header {
@@ -49,12 +54,45 @@ img {
   top:0;
   padding: 1rem;
   background: linear-gradient(to right, $primaryColor, $secondaryColor);
+  z-index: 100;
 }
 
+// main {
+//   background-image: url("./images/Namnlös\ design.png");
+//   background-repeat: repeat;
+//   background-position: center;  
+//   flex:1;
+//   padding-bottom: 2rem;
+// }
+
 main {
+  position: relative;
+}
+
+main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("./images/Namnlös design.png");
+  background-repeat: repeat;
+  background-position: center;
+  transform: translateZ(0);
+  z-index: -1;
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25); /* light dim */
+  z-index: -1;
+}
+
+.main-inner {
+  max-width: 1000px;
+  margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
-  flex:1;
 }
 
 .navBarList {
@@ -82,6 +120,7 @@ main {
   text-align: center;
   margin: 1rem 0;
   background-color: white;
+  border-radius: 15px;
 }
 
 ul {
@@ -96,6 +135,7 @@ li {
 }
 
 .section1 {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -106,6 +146,7 @@ li {
   flex: 0 1 350px;
   min-width: 300px;
   padding: 1rem;
+  border-radius: 15px;
 }
 
 .aboutHero {
@@ -122,6 +163,7 @@ li {
 }
 
 footer {
+  margin-top: auto;
   text-align: center;
   padding: 1rem;
   background: linear-gradient(to right, $primaryColor, $secondaryColor);
@@ -158,9 +200,11 @@ footer {
 p {
   background-color: white;
   text-align: center;
+  border-radius: 0 0 15px 15px;
 }
 
 .realP {
+  margin-bottom: 1rem;
   line-height: 2rem;
   padding: 1rem;
   border-radius: 15px;
@@ -188,8 +232,8 @@ p {
 // Computers >= 900px
 @include respond(computer) {
   main {
-    max-width: 1000px;
-    margin: auto;
+    margin: 0;
+    max-width: none;
   }
 
   .section1 div {
