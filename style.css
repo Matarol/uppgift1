@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Gabriola";
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
   overflow-x: hidden;
 }
 
@@ -39,6 +39,7 @@ img {
 }
 
 main {
+  flex: 1 0 auto;
   position: relative;
 }
 
@@ -57,7 +58,7 @@ main::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.25); /* light dim */
+  background: rgba(255, 255, 255, 0.25);
   z-index: -1;
 }
 
@@ -66,13 +67,15 @@ main::after {
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: clamp(2rem, 6vw, 5rem);
 }
 
 .navBarList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: clamp(0.5rem, 2vw, 2rem);
+  transition: gap 0.3s ease;
 }
 
 .navBarListItem {
@@ -109,14 +112,13 @@ li {
 .section1 {
   margin-top: 1rem;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 .section1 div {
   background: rgb(252, 230, 230);
-  flex: 0 1 350px;
-  min-width: 300px;
+  flex: 0 1 min(100%, 305px);
   padding: 1rem;
   border-radius: 15px;
 }
@@ -135,38 +137,41 @@ li {
 }
 
 footer {
-  margin-top: auto;
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   background: linear-gradient(to right, #fdfad8, rgb(168, 214, 162));
 }
 
 .gallery-container {
-  padding: 1rem;
+  padding-bottom: 3rem;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  transition: gap 0.3s ease;
 }
 
 .card {
-  margin: 0.5rem;
-  padding: 0.5rem;
   background-color: rgb(252, 230, 230);
   border: none;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
 }
 
+.card,
+.section1 div {
+  transition: padding 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
 .h1Rubrik {
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   background-color: white;
 }
 
 .cardText {
-  font-size: medium;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
 }
 
 p {
@@ -188,26 +193,12 @@ p {
   .navBarList {
     flex-direction: row;
     justify-content: center;
-    gap: 2rem;
-  }
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .section1 {
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 @media (min-width: 900px) {
   main {
     margin: 0;
     max-width: none;
-  }
-  .section1 div {
-    flex: 1;
-  }
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
   }
   .gallery-container {
     max-width: 1000px;
