@@ -17,10 +17,16 @@
   --wallpaper: url("./images/bg-pic-dark-theme.png");
 }
 
+.toggleThemeBtn {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--textColor);
 }
 
 html, body {

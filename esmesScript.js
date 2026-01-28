@@ -1,3 +1,9 @@
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+};
+
 const toggleBtn = document.getElementById("toggle-theme-btn");
 
 toggleBtn.addEventListener("click", () => {
@@ -8,4 +14,6 @@ toggleBtn.addEventListener("click", () => {
         toggleBtn.textContent = "🌙 Mörkt Läge";
     }
     document.documentElement.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+
+    localStorage.setItem("theme", newTheme);
 });
