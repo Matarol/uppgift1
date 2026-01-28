@@ -3,6 +3,8 @@
   --primaryColor: #fdfad8;
   --secondaryColor: rgb(168, 214, 162);
   --cardBgColor: rgb(252, 230, 230);
+  --textBgColor: #ffffff;
+  --textColor: #333;
   --wallpaper: url("./images/Namnlös design.png");
 }
 
@@ -10,6 +12,8 @@
   --primaryColor: #7D8170;
   --secondaryColor: rgb(92,85,101);
   --cardBgColor: rgb(157,175,123);
+  --textBgColor: rgb(66,68,75);
+  --textColor: #ddd;
   --wallpaper: url("./images/bg-pic-dark-theme.png");
 }
 
@@ -109,7 +113,7 @@ main::after {
 .rubrik {
   text-align: center;
   margin: 1rem 0;
-  background-color: white;
+  background-color: var(--textBgColor);
   border-radius: 15px;
 }
 
@@ -181,7 +185,7 @@ footer {
 
 .h1Rubrik {
   font-size: clamp(1.6rem, 3vw, 2.4rem);
-  background-color: white;
+  background-color: var(--textBgColor);
 }
 
 .cardText {
@@ -189,7 +193,7 @@ footer {
 }
 
 p {
-  background-color: white;
+  background-color: var(--textBgColor);
   text-align: center;
   border-radius: 0 0 15px 15px;
 }
@@ -199,7 +203,7 @@ p {
   line-height: 2rem;
   padding: 1rem;
   border-radius: 15px;
-  background-color: white;
+  background-color: var(--textBgColor);
   box-shadow: 0 0 30px rgba(128, 184, 121, 0.45);
 }
 
