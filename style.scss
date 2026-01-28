@@ -1,6 +1,18 @@
-﻿$primaryColor: #fdfad8;
-$secondaryColor: rgb(168, 214, 162);
-$cardBgColor: rgb(252, 230, 230);
+﻿//Light-mode
+:root {
+--primaryColor: #fdfad8;
+--secondaryColor: rgb(168, 214, 162);
+--cardBgColor: rgb(252, 230, 230);
+--wallpaper: url("./images/Namnlös design.png");
+}
+
+//Dark-mode
+[data-theme="dark"] {
+  --primaryColor: #7D8170;
+  --secondaryColor: rgb(92,85,101);
+  --cardBgColor: rgb(157,175,123);
+  --wallpaper: url("./images/bg-pic-dark-theme.png");
+}
 
 $tablet: 600px;
 $computer: 900px;
@@ -54,7 +66,7 @@ img {
   position: sticky;
   top:0;
   padding: 1rem;
-  background: linear-gradient(to right, $primaryColor, $secondaryColor);
+  background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor));
   z-index: 100;
 }
 
@@ -67,7 +79,7 @@ main::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("./images/Namnlös design.png");
+  background-image: var(--wallpaper);
   background-repeat: repeat;
   background-position: center;
   transform: translateZ(0);
@@ -137,7 +149,7 @@ li {
 }
 
 .section1 div {
-  background: $cardBgColor;
+  background: var(--cardBgColor);
   flex: 0 1 min(100%, 305px);
   padding: 1rem;
   border-radius: 15px;
@@ -160,7 +172,7 @@ footer {
   //margin-top: 1rem;
   text-align: center;
   padding: 0.5rem;
-  background: linear-gradient(to right, $primaryColor, $secondaryColor);
+  background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor));
 }
 
 .gallery-container {
@@ -175,7 +187,7 @@ footer {
 }
 
 .card {
-  background-color: $cardBgColor;
+  background-color: var(--cardBgColor);
   border: none;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
