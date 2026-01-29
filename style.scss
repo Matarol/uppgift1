@@ -2,7 +2,9 @@
 :root {
 --primaryColor: #fdfad8;
 --secondaryColor: rgb(168, 214, 162);
---cardBgColor: rgb(252, 230, 230);
+--thirdColor: rgb(249,234,235);
+// --cardBgColor: rgb(252, 230, 230);
+--cardBgColor: #ffffff;
 --textBgColor: #ffffff;
 --textColor: #333;
 --wallpaper: url("./images/Namnlös design.png");
@@ -12,7 +14,9 @@
 [data-theme="dark"] {
   --primaryColor: #7D8170;
   --secondaryColor: rgb(92,85,101);
-  --cardBgColor: rgb(157,175,123);
+  --thirdColor: rgba(201, 173, 196);
+  // --cardBgColor: rgb(157,175,123);
+  --cardBgColor: rgb(66,68,75);
   --textBgColor: rgb(66,68,75);
   --textColor: #ddd;
   --wallpaper: url("./images/bg-pic-dark-theme.png");
@@ -21,6 +25,7 @@
 .toggleThemeBtn {
   border: none;
   background-color: rgba(0, 0, 0, 0.01);
+  color:#333
 }
 
 $tablet: 600px;
@@ -76,7 +81,7 @@ img {
   position: sticky;
   top:0;
   padding: 1rem;
-  background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor));
+  background: linear-gradient(to right, var(--thirdColor), var(--primaryColor), var(--secondaryColor));
   z-index: 100;
 }
 
@@ -182,7 +187,7 @@ footer {
   //margin-top: 1rem;
   text-align: center;
   padding: 0.5rem;
-  background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor));
+  background: linear-gradient(to right, var(--thirdColor), var(--primaryColor), var(--secondaryColor));
 }
 
 .gallery-container {
