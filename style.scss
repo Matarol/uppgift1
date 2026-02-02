@@ -157,7 +157,7 @@ li {
 }
 
 .section1 {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: clamp(0.75rem, 2vw, 1.5rem);
@@ -165,8 +165,8 @@ li {
 
 .section1 div {
   background: var(--cardBgColor);
-  flex: 0 1 min(100%, 305px);
-  padding: 1rem;
+  flex: 1 1 min(100%, 305px);
+  // padding: 1rem;
   border-radius: 15px;
 }
 
